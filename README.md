@@ -1,2 +1,5 @@
 # scripts
-Scripts  for fun
+Scripts for fun
+
+## mac_app_launch
+批量启动或退出Mac应用

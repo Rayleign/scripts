@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+if ARGV.size==0
+    app='qq'
+else
+    app=ARGV[0]
+    if ARGV.size>1
+        action=ARGV[1]
+    else
+        action='on'
+    end
+end
+
+if app=='all'
+    s=`ls *.scpt|grep -v commom`.split("\n")
+    for scrp in s
+        system "osascript #{scrp} #{action}"
+    end
+else
+    system "osascript #{app}.scpt #{action}"
+end 
