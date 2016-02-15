@@ -14,9 +14,9 @@ end
 path= File.dirname(__FILE__)
 
 if app=='all'
-    s=`cd #{path} & ls *.scpt|grep -v commom`.split("\n")
+    s=`cd #{path} && ls *.scpt|grep -v commom`.split("\n")
     for scrp in s
-        system "osascript #{scrp} #{action}"
+        system "osascript #{path}/#{scrp} #{action}"
     end
 else
     system "osascript #{path}/#{app}.scpt #{action}"
